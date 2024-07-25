@@ -32,7 +32,7 @@ const MyApp = () => {
       ),
     },
     {
-      path: "/updatePost",
+      path: "/updatePost/:id",
       element: (
         <>
           <MyNavbar />

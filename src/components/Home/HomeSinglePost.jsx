@@ -10,7 +10,7 @@ import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import CommentPost from "./CommentPost";
 
-const HomeSinglePost = () => {
+const HomeSinglePost = (x) => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -27,7 +27,7 @@ const HomeSinglePost = () => {
                   <img className="bdr h-12 w-12" src={Data[0].image} alt="" />
                 </div>
                 <div className="bdr ">
-                  <div className="bdr "> name </div>
+                  <div className="bdr "> name {x.name}</div>
                   <div className="bdr ">username </div>
                 </div>
               </div>
