@@ -8,6 +8,8 @@ import Home from "./Home/Home";
 import SearchProfile from "./SearchProfile/SearchProfile";
 import Footer from "./Footer/Footer";
 import MyNavbar from "./Header/MyNavbar";
+import ViewSingleProfile from "./SearchProfile/ViewSingleProfile";
+import MyFollowing from "./myProfile/MyFollowing";
 
 const MyApp = () => {
   const route = createBrowserRouter([
@@ -57,6 +59,26 @@ const MyApp = () => {
         <>
           <MyNavbar />
           <SearchProfile />
+          <Footer />
+        </>
+      ),
+    },
+    {
+      path: "/viewSingleProfile/:id",
+      element: (
+        <>
+           <MyNavbar />
+          <ViewSingleProfile />
+          <Footer />
+        </>
+      ),
+    },
+    {
+      path: "/myFollowing",
+      element: (
+        <>
+           <MyNavbar />
+          <MyFollowing/>
           <Footer />
         </>
       ),

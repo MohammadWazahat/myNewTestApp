@@ -31,7 +31,7 @@ const MyNavbar = () => {
                   </NavLink>
                 </li>
                 <li className="">
-                  <NavLink to="/" className="">
+                  <NavLink to="/myFollowing" className="">
                     <div className="flex">
                       <div>
                         <MdOutlineShoppingCart

@@ -9,7 +9,7 @@ import {
 
 const UpdatePost = () => {
   const { id } = useParams();
-  console.log(id);
+  // console.log(id);
 
   const [user, setUser] = useState({
     postImage: "",
@@ -28,7 +28,7 @@ const UpdatePost = () => {
   } = useGetSinglePostsQuery(id);
 
   useEffect(() => {
-    console.log(myNewData);
+    // console.log(myNewData);
     if (myNewData) {
       setUser(myNewData);
     }
@@ -37,7 +37,7 @@ const UpdatePost = () => {
   const inputChangeHandler = (e) => {
     const { name, value } = e.target;
     setUser({ ...user, [name]: value });
-    console.log(user);
+    // console.log(user);
   };
 
   const navigate = useNavigate();
@@ -51,7 +51,7 @@ const UpdatePost = () => {
       id: id,
       updatedPost: user,
     };
-    console.log(task);
+    // console.log(task);
     updatePost(task);
     navigate("/readPost");
     location.reload();

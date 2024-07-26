@@ -8,6 +8,7 @@ import {
   actionTypeOnesecondSlice,
   actionTypeTwosecondSlice,
 } from "../../redux/features/secondSlice/secondSlice";
+import { actionTypeOneotherUserProfileSliceOne } from "../../redux/features/otherUserProfilesSlices/otherUserProfileSliceOne";
 
 const TestRedux = () => {
   const dispatch = useDispatch();
@@ -19,21 +20,32 @@ const TestRedux = () => {
   const secondValue = useSelector((state) => state.storeSliceTwo.value);
   console.log(secondValue);
 
+  const thirdValue = useSelector((state) => state.storeSliceThree);
+  console.log(thirdValue);
+
   return (
     <div>
       <div>{firstValue}</div>
       <div>{secondValue}</div>
+      <div>{thirdValue.value}</div>
       <button onClick={() => dispatch(actionTypeOneFirstSlice("Add Me"))}>
         actionTypeOneFirstSlice
       </button>
       <button onClick={() => dispatch(actionTypeTwoFirstSlice("Add Me"))}>
-        actionTypeTwoFirstSlic
+        actionTypeTwoFirstSlice
       </button>
       <button onClick={() => dispatch(actionTypeOnesecondSlice("Add Me"))}>
         actionTypeOnesecondSlice
       </button>
       <button onClick={() => dispatch(actionTypeTwosecondSlice("Add Me"))}>
         actionTypeTwosecondSlice
+      </button>
+      <button
+        onClick={() =>
+          dispatch(actionTypeOneotherUserProfileSliceOne("Add Me"))
+        }
+      >
+        actionTypeOneotherUserProfileSliceOne
       </button>
     </div>
   );

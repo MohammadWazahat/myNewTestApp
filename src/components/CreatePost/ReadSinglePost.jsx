@@ -20,6 +20,7 @@ const ReadSinglePost = (x) => {
       location.reload();
     }
   };
+  
   return (
     <div>
       i m read single post
@@ -38,7 +39,7 @@ const ReadSinglePost = (x) => {
                 Update Post
               </Button>
             </Link>
-            <Button className="mt-2" variant="primary"  onClick={(e) => handleDelete(x.id)}>
+            <Button className="mt-2" variant="primary"  onClick={() => handleDelete(x.id)}>
               Delete Post
             </Button>
           </Card.Body>

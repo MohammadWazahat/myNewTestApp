@@ -17,7 +17,7 @@ const AddPostForm = () => {
   const navigate = useNavigate();
 
   const [addPost] = useAddPostMutation();
-  console.log(addPost)
+  // console.log(addPost)
 
   const inputChangeHandler = (e) => {
     const { name, value } = e.target;
@@ -27,7 +27,7 @@ const AddPostForm = () => {
 
   const submitForm = (e) => {
     e.preventDefault();
-    console.log(values);
+    // console.log(values);
     addPost(values);
     navigate("/readPost");
     location.reload();

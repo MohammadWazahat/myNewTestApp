@@ -3,7 +3,7 @@ import HomeSinglePost from "./HomeSinglePost";
 import post from "../../dataFiles/otherUserPosts.json";
 
 const Home = () => {
-  console.log(post);
+  // console.log(post);
   return (
     <div>
       other users post reder here
