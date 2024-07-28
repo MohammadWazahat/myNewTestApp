@@ -9,6 +9,7 @@ import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import CommentPost from "./CommentPost";
+import AddCommentForm from "../Comment/AddCommentForm";
 
 const HomeSinglePost = (x) => {
   const [show, setShow] = useState(false);
@@ -73,7 +74,8 @@ const HomeSinglePost = (x) => {
                   <Offcanvas.Title>Comment...</Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body>
-                  <CommentPost />
+                  {/* <CommentPost /> */}
+                  <AddCommentForm/>
                 </Offcanvas.Body>
               </Offcanvas>
             </div>
