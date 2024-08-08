@@ -17,70 +17,82 @@ const HomeSinglePost = (x) => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   return (
-    <div>
-      i m home single post
-      <div>
-        <div>
-          <div className="bdr m-4 p-2 my-12 flex flex-col gap-4">
-            <div className="bdr flex justify-between ">
-              <div className="bdr flex gap-4 ">
-                <div className="bdr ">
-                  <img className="bdr h-12 w-12" src={Data[0].image} alt="" />
-                </div>
-                <div className="bdr ">
-                  <div className="bdr "> name {x.name}</div>
-                  <div className="bdr ">username </div>
-                </div>
-              </div>
-              <div className="bdr ">
-                {" "}
-                three dots
-                <HiDotsVertical />
-              </div>
+    <div className="bdr py-2">
+      <section>
+        <div className="fb">
+          <div className="fc gap-4">
+            <div className="">
+              <img
+                className="border-2 rounded-full h-16 w-16"
+                src={Data[0].image}
+                alt=""
+              />
             </div>
-            <div className="bdr "> </div>
-            <div className="bdr ">
-              <img className="bdr h-84 w-96 " src={Data[0].image} alt="" />
+            <div className=" fc flex-col ">
+              <div className="text-xl ">{x.name}</div>
+              <div className="text-sm">username </div>
             </div>
-            <div className="bdr flex justify-between ">
-              <div className="bdr flex gap-4 ">
-                <div className="bdr ">
-                  like button
-                  <BiSolidLike />
-                </div>
-                <div className="bdr ">
-                <FaRegCommentDots onClick={handleShow} className="h-8 w-8"/>
-                </div>
-                <div className="bdr ">
-                  share
-                  <TbLocationShare />
-                </div>
-              </div>
-              <div className="bdr ">
-                <button>
-                  savepost
-                  <FaSave />
-                </button>
-              </div>
+          </div>
+          <div className="fc gap-4 mx-2 ">
+            <div className="">
+              <button className="border rounded-xl p-1 px-3">Follow</button>
             </div>
-            <div className="bdr ">
-              <div className="bdr ">likes </div>
-              <div className="bdr ">hashtags </div>
-            </div>
-            <div className="bdr ">comment column</div>
-            <div>
-              <Offcanvas show={show} onHide={handleClose}>
-                <Offcanvas.Header closeButton>
-                  <Offcanvas.Title>Comment...</Offcanvas.Title>
-                </Offcanvas.Header>
-                <Offcanvas.Body>
-                  {/* <CommentPost /> */}
-                  <AddCommentForm/>
-                </Offcanvas.Body>
-              </Offcanvas>
+            <div className=" b">
+              <HiDotsVertical className="h-8 w-8" />
             </div>
           </div>
         </div>
+      </section>
+      <section className="mt-4">
+        <div className="">
+          <img className=" w-full h-96" src={Data[0].image} alt="" />
+        </div>
+      </section>
+      <section className="mt-8 ">
+        <div className="flex justify-between mx-2  ">
+          <div className=" flex gap-4 ">
+            <div className=" fc gap-2 items-center">
+              <div>
+                <BiSolidLike className="h-8 w-8" />
+              </div>
+              <div>4000</div>
+            </div>
+            <div className="fc gap-2 items-center ">
+              <div>
+                <FaRegCommentDots className="h-8 w-8" onClick={handleShow} />
+              </div>
+              <div>4000</div>
+            </div>
+            <div className=" fc gap-2 items-center ">
+              <div>
+                <TbLocationShare className="h-8 w-8" />
+              </div>
+              <div>4000</div>
+            </div>
+          </div>
+          <div className="fc items-center ">
+            <button>
+              <FaSave className="h-8 w-8" />
+            </button>
+          </div>
+        </div>
+      </section>
+      <section className="mt-4">
+        <div className="bdr ">comment column</div>
+        <div className="bdr ">likes </div>
+        <div className="bdr ">hashtags </div>
+      </section>
+
+      <div>
+        <Offcanvas show={show} onHide={handleClose}>
+          <Offcanvas.Header closeButton>
+            <Offcanvas.Title>Comment...</Offcanvas.Title>
+          </Offcanvas.Header>
+          <Offcanvas.Body>
+            {/* <CommentPost /> */}
+            <AddCommentForm />
+          </Offcanvas.Body>
+        </Offcanvas>
       </div>
     </div>
   );
