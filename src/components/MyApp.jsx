@@ -2,7 +2,6 @@ import React from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import TestRedux from "./TestRedux/TestRedux";
 import AddPostForm from "./CreatePost/AddPostForm";
-import ReadPost from "./CreatePost/ReadPost";
 import UpdatePost from "./CreatePost/UpdatePost";
 import Home from "./Home/Home";
 import SearchProfile from "./SearchProfile/SearchProfile";
@@ -56,31 +55,11 @@ const MyApp = () => {
       ),
     },
     {
-      path: "/myFollowing",
-      element: (
-        <>
-           <MyNavbar />
-          <MyFollowing/>
-          <Footer />
-        </>
-      ),
-    },
-    {
       path: "/addPost",
       element: (
         <>
           <MyNavbar />
           <AddPostForm />
-          <Footer />
-        </>
-      ),
-    },
-    {
-      path: "/readPost",
-      element: (
-        <>
-          <MyNavbar />
-          <ReadPost />
           <Footer />
         </>
       ),
@@ -95,7 +74,10 @@ const MyApp = () => {
         </>
       ),
     },
- 
+
+
+
+    
     {
       path: "/myFollowing",
       element: (

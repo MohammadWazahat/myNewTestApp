@@ -1,5 +1,8 @@
 import React from "react";
-import { useDeleteFollowingMutation, useGetFollowingsQuery } from "../../redux/features/apiSlices/addFollowingSlice";
+import {
+  useDeleteFollowingMutation,
+  useGetFollowingsQuery,
+} from "../../redux/features/apiSlices/addFollowingSlice";
 
 const MyFollowing = () => {
   const {
@@ -13,7 +16,7 @@ const MyFollowing = () => {
   const [deleteFollowing] = useDeleteFollowingMutation();
 
   const handleDelete = (id) => {
-    console.log(id)
+    console.log(id);
     // window.confirm ask for confirmation of deletion
     const confirm = window.confirm("Are You sure to Unfollow the Profile");
     if (confirm) {
@@ -24,9 +27,8 @@ const MyFollowing = () => {
 
   return (
     <div>
-      i am my following
       <div>
-        <div>
+        <section className="mt-8">
           <div>
             {isLoading ? (
               <p className="text-center">Loading...</p>
@@ -35,26 +37,46 @@ const MyFollowing = () => {
                 {error.error || "Something went wrong"}
               </p>
             ) : (
-              myFollowing.map((item, index) => {
-                return (
-                  <div key={index}>
-                    <div className="flex justify-between m-2 p-2 bdr">
-                      <div>{item.name}</div>
-                      <div>
-                        <button
-                          className="bdr"
-                          onClick={() => handleDelete(item.id)}
-                        >
-                          UnFollow
-                        </button>
-                      </div>
+              <div className="grid grid-cols-1 gap-8">
+                {myFollowing.map((item, index) => {
+                  return (
+                    <div key={index}>
+                      <section>
+                        <div className="fb">
+                          <div className="fc gap-4">
+                            <div className="">
+                              <img
+                                className="border-2 rounded-full h-16 w-16"
+                                src={item.profile_pic}
+                                alt=""
+                              />
+                            </div>
+                            <div className=" fc flex-col ">
+                              <div className="text-xl ">{item.name}</div>
+                              <div className="text-sm">{item.username} </div>
+                            </div>
+                          </div>
+                          <div className="fc gap-4 mx-2 ">
+                            <div className=" ">
+                              <div>
+                                <button
+                                  className="border rounded-xl p-1 px-3"
+                                  onClick={() => handleDelete(item.id)}
+                                >
+                                  UnFollow
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
                     </div>
-                  </div>
-                );
-              })
+                  );
+                })}
+              </div>
             )}
           </div>
-        </div>
+        </section>
       </div>
     </div>
   );

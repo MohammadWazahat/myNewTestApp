@@ -1,15 +1,16 @@
 import React from "react";
 import Data from "../TestImage/TestImage.json";
+
+import { useState } from "react";
+import Offcanvas from "react-bootstrap/Offcanvas";
+import CommentPost from "./CommentPost";
+import AddCommentForm from "../Comment/AddCommentForm";
+
 import { BiSolidLike } from "react-icons/bi";
 import { FaRegCommentDots } from "react-icons/fa";
 import { TbLocationShare } from "react-icons/tb";
 import { FaSave } from "react-icons/fa";
 import { HiDotsVertical } from "react-icons/hi";
-import { useState } from "react";
-import Button from "react-bootstrap/Button";
-import Offcanvas from "react-bootstrap/Offcanvas";
-import CommentPost from "./CommentPost";
-import AddCommentForm from "../Comment/AddCommentForm";
 
 const HomeSinglePost = (x) => {
   const [show, setShow] = useState(false);
@@ -44,6 +45,10 @@ const HomeSinglePost = (x) => {
         </div>
       </section>
       <section className="mt-4">
+        <div className="m-2">
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </div>
         <div className="">
           <img className=" w-full h-96" src={Data[0].image} alt="" />
         </div>
@@ -72,7 +77,7 @@ const HomeSinglePost = (x) => {
           </div>
           <div className="fc items-center ">
             <button>
-              <FaSave className="h-6 w-6"/>
+              <FaSave className="h-6 w-6" />
             </button>
           </div>
         </div>

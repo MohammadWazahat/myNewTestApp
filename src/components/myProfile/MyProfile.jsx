@@ -2,10 +2,10 @@ import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 
 import { CiLock } from "react-icons/ci";
-import { CiSquarePlus } from "react-icons/ci";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { CiSquarePlus } from "react-icons/ci";
 import { TbGridDots } from "react-icons/tb";
-
+import ReadPost from "../CreatePost/ReadPost";
 
 const MyProfile = () => {
   return (
@@ -16,7 +16,7 @@ const MyProfile = () => {
             <div>
               <CiLock className=" h-8 w-8 " />
             </div>
-            <div>Kingmozarkes006</div>
+            <div>@Kingmozarkes006</div>
           </div>
           <div className="flex justify-center items-center gap-4">
             <div>
@@ -51,7 +51,9 @@ const MyProfile = () => {
             </div>
             <div className=" flex flex-col justify-center items-center gap-2">
               <div className=" text-2xl">500</div>
-              <div className=" text-lg font-light"> followings</div>
+              <div className=" text-lg font-light">
+                <NavLink to="/myFollowing">followings</NavLink>
+              </div>
             </div>
           </div>
         </div>
@@ -78,19 +80,20 @@ const MyProfile = () => {
       <section className="mt-12">
         <div className=" flex justify-around items-center  ">
           <div className="">
-          <TbGridDots className="h-8 w-8 "/>
+            <TbGridDots className="h-8 w-8 " />
           </div>
-          <div className="" >
-            <NavLink to="/createPostForm" onClick={() => createPost()}>
+          <div className="">
+            <NavLink to="/addPost" onClick={() => createPost()}>
               <CiSquarePlus className=" h-8 w-8 " />
             </NavLink>
           </div>
         </div>
       </section>
-
-      {/* <div>
-        <ReadPost />
-      </div> */}
+      <section className="mt-8">
+        <div>
+          <ReadPost />
+        </div>
+      </section>
     </div>
   );
 };
