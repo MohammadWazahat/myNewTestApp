@@ -11,35 +11,41 @@ const SearchSingleUser = (item) => {
 
   return (
     <div>
-      <div>
-        <div className="bdr border-4 border-y-slate-800">
-          <div className="bdr flex gap-4 justify-between">
-            <div className="bdr flex gap-2 ">
-              <div className="bdr m-2 p-2">
-                <img className="bdr h-12 w-12" src={item.profile_pic} alt="" />
-              </div>
-              <div className="bdr ">
-                <div className="bdr m-2 p-1">{item.name}</div>
-                <div className="bdr m-2 p-1">{item.username}</div>
-              </div>
+      <section>
+        <div className="fb">
+          <div className="fc gap-4">
+            <div className="">
+              <img
+                className="border-2 rounded-full h-16 w-16"
+                src={item.profile_pic}
+                alt=""
+              />
             </div>
-            <div>
-              <Link to={`/viewSingleProfile/${item.user_id}`}>
-                <button
-                  className="bdr m-2 p-2 "
-                  onClick={() =>
-                    dispatch(
-                      actionTypeOneotherUserProfileSliceOne(item.user_id)
-                    )
-                  }
-                >
-                  View Profile ...
-                </button>
-              </Link>
+            <div className=" fc flex-col ">
+              <div className="text-xl ">{item.name}</div>
+              <div className="text-sm">{item.username} </div>
+            </div>
+          </div>
+          <div className="fc gap-4 mx-2 ">
+            <div className=" ">
+              <div>
+                <Link to={`/viewSingleProfile/${item.user_id}`}>
+                  <button
+                    className="border rounded-xl p-1 px-3"
+                    onClick={() =>
+                      dispatch(
+                        actionTypeOneotherUserProfileSliceOne(item.user_id)
+                      )
+                    }
+                  >
+                    View Profile ...
+                  </button>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 };

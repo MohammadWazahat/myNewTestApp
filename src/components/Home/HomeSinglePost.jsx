@@ -17,9 +17,9 @@ const HomeSinglePost = (x) => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   return (
-    <div className="bdr py-2">
+    <div className="">
       <section>
-        <div className="fb">
+        <div className="fb px-2">
           <div className="fc gap-4">
             <div className="">
               <img
@@ -53,34 +53,33 @@ const HomeSinglePost = (x) => {
           <div className=" flex gap-4 ">
             <div className=" fc gap-2 items-center">
               <div>
-                <BiSolidLike className="h-8 w-8" />
+                <BiSolidLike className="h-6 w-6" />
               </div>
-              <div>4000</div>
+              <div className="text-sm">4000</div>
             </div>
             <div className="fc gap-2 items-center ">
               <div>
-                <FaRegCommentDots className="h-8 w-8" onClick={handleShow} />
+                <FaRegCommentDots className="h-6 w-6" onClick={handleShow} />
               </div>
-              <div>4000</div>
+              <div className="text-sm">4000</div>
             </div>
             <div className=" fc gap-2 items-center ">
               <div>
-                <TbLocationShare className="h-8 w-8" />
+                <TbLocationShare className="h-6 w-6" />
               </div>
-              <div>4000</div>
+              <div className="text-sm">4000</div>
             </div>
           </div>
           <div className="fc items-center ">
             <button>
-              <FaSave className="h-8 w-8" />
+              <FaSave className="h-6 w-6"/>
             </button>
           </div>
         </div>
       </section>
       <section className="mt-4">
-        <div className="bdr ">comment column</div>
-        <div className="bdr ">likes </div>
-        <div className="bdr ">hashtags </div>
+        <div className=" ">comment column</div>
+        <div className=" ">hashtags </div>
       </section>
 
       <div>

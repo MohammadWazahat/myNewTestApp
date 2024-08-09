@@ -11,14 +11,18 @@ const SearchProfile = () => {
 
   return (
     <div>
-      <div>
-        <SearchBar />
-      </div>
-      <div className="flex flex-col gap-8 m-2 p-2.5 ">
-        {data.map((item, index) => {
-          return <SearchSingleUser key={index} {...item} />;
-        })}
-      </div>
+      <section className="mt-4">
+        <div>
+          <SearchBar />
+        </div>
+      </section>
+      <section className="mt-16">
+        <div className="flex flex-col gap-8 m-2 p-2.5 ">
+          {data.map((item, index) => {
+            return <SearchSingleUser key={index} {...item} />;
+          })}
+        </div>
+      </section>
     </div>
   );
 };

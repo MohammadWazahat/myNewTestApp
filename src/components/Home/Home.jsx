@@ -26,7 +26,6 @@ const Home = () => {
         <div className="fc gap-3 ">
           <div>
             <div>
-              {" "}
               <img
                 className="h-24 w-24 rounded-full bdr"
                 src="https://images.pexels.com/photos/2027821/pexels-photo-2027821.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
@@ -70,8 +69,8 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="mt-8">
-        <div className="grid grid-col-1 gap-8">
+      <section className="mt-12">
+        <div className="grid grid-col-1 gap-12">
           {post.map((item, index) => {
             return (
               <div key={index}>

@@ -18,33 +18,32 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="flex justify-center items-center">
-      <div className=" w-1/3">
-        <form className="" onSubmit={submitForm}>
-          <div className="flex  ">
-            <div className=" basis-5/6">
-              <input
-                className="bdr"
-                type="text"
-                name="brand"
-                onChange={inputHandler}
-                required
-              />
+    <div className="fc ">
+      <section>
+        <div className="">
+          <form className="" onSubmit={submitForm}>
+            <div className="fc ">
+              <div className=" ">
+                <input
+                  className=" h-full border-s border-t border-b  rounded-s-3xl px-4 "
+                  type="text"
+                  name="brand"
+                  onChange={inputHandler}
+                  required
+                />
+              </div>
+              <div className="p-1 fc items-center border-e border-t border-b  rounded-e-3xl px-3">
+                <IoMdSearch
+                  className="h-6 w-6"
+                  onClick={() =>
+                    dispatch(actionTypeTwootherUserProfileSliceOne(text.name))
+                  }
+                />
+              </div>
             </div>
-            <div className="bdr">
-              <button
-                type="submit"
-                className="bdr"
-                onClick={() =>
-                  dispatch(actionTypeTwootherUserProfileSliceOne(text.name))
-                }
-              >
-                <IoMdSearch className="h-8 w-8 " />
-              </button>
-            </div>
-          </div>
-        </form>
-      </div>
+          </form>
+        </div>
+      </section>
     </div>
   );
 };
