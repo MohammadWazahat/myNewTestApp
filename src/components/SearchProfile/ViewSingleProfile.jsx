@@ -4,7 +4,7 @@ import { useAddFollowingMutation } from "../../redux/features/apiSlices/addFollo
 
 const ViewSingleProfile = () => {
   const myValue = useSelector((state) => state.storeSliceThree);
-  // console.log(myValue.singleUserProfile[0]);
+  console.log(myValue.singleUserProfile[0]);
   const viewData = myValue.singleUserProfile[0];
   // console.log(viewData)
 

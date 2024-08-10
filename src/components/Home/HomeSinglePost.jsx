@@ -1,5 +1,6 @@
 import React from "react";
 import Data from "../TestImage/TestImage.json";
+import { useDispatch, useSelector } from "react-redux";
 
 import { useState } from "react";
 import Offcanvas from "react-bootstrap/Offcanvas";
@@ -11,12 +12,26 @@ import { FaRegCommentDots } from "react-icons/fa";
 import { TbLocationShare } from "react-icons/tb";
 import { FaSave } from "react-icons/fa";
 import { HiDotsVertical } from "react-icons/hi";
+import { useAddFollowingMutation } from "../../redux/features/apiSlices/addFollowingSlice";
+import { actionTypeOneotherUserProfileSliceOne } from "../../redux/features/otherUserProfilesSlices/otherUserProfileSliceOne";
+import { myFollowingSliceOne } from "../../redux/features/myFollowingSlice/myFollowingSliice";
+
 
 const HomeSinglePost = (x) => {
+ 
+  const dispatch = useDispatch();
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+
+  // const addFollowing =(y)=>{
+  //   console.log(y)
+  // }
+
+  const [addFollowing] = useAddFollowingMutation();
+  // console.log(addFollowing);
   return (
     <div className="">
       <section>
@@ -36,7 +51,15 @@ const HomeSinglePost = (x) => {
           </div>
           <div className="fc gap-4 mx-2 ">
             <div className="">
-              <button className="border rounded-xl p-1 px-3">Follow</button>
+              <button
+                className="border rounded-xl p-1 px-3"
+                onClick={() =>
+                  dispatch( myFollowingSliceOne(x))
+                }
+                // onClick={() => addFollowing(x)}
+              >
+                Follow
+              </button>
             </div>
             <div className=" b">
               <HiDotsVertical className="h-8 w-8" />

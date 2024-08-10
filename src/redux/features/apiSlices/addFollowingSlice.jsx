@@ -1,5 +1,10 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
+const checkdata=(x)=>{
+  console.log(x);
+  
+}
+
 export const apiAddFollowings = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:3005" }),
   //   tagTypes: ["Tasks"],
@@ -16,6 +21,8 @@ export const apiAddFollowings = createApi({
     // }),
     addFollowing : builder.mutation({
       query: (task) => (
+        checkdata(task),
+        console.log("hello"),
         console.log(task),{
         url: "/followings",
         method: "POST",
