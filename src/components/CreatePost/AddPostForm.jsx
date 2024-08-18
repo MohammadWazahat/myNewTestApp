@@ -6,7 +6,6 @@ import { useAddPostMutation } from "../../redux/features/apiSlices/createPostSli
 
 const AddPostForm = () => {
   const [values, setValues] = useState({
-    postImage: "",
     caption: "",
     tagPeople: "",
     location: "",

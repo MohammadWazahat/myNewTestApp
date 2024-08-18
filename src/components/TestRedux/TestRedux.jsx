@@ -28,7 +28,8 @@ const TestRedux = () => {
       <div>{firstValue}</div>
       <div>{secondValue}</div>
       <div>{thirdValue.value}</div>
-      <button onClick={() => dispatch(actionTypeOneFirstSlice("Add Me"))}>
+   <div className="flex flex-col mt-32 gap-12">
+   <button onClick={() => dispatch(actionTypeOneFirstSlice("Add Me"))}>
         actionTypeOneFirstSlice
       </button>
       <button onClick={() => dispatch(actionTypeTwoFirstSlice("Add Me"))}>
@@ -47,6 +48,7 @@ const TestRedux = () => {
       >
         actionTypeOneotherUserProfileSliceOne
       </button>
+   </div>
     </div>
   );
 };

@@ -7,7 +7,7 @@ const initialState = {
   myFollowings :[],
 };
 
-console.log(initialState)
+// console.log(initialState)
 
 export const myFollowingSlice = createSlice({
   name: "followingSlice",

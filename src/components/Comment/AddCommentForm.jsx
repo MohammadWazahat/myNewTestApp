@@ -31,12 +31,12 @@ const AddCommentForm = () => {
   };
   return (
     <div>
-      i am a comment
       <div>
         <form onSubmit={submitForm}>
-          <label htmlFor="comment">Comment</label>
+          {/* <label htmlFor="comment">Comment</label> */}
           <br />
           <input
+          className="bdr w-full mx-2 rounded p-2 "
             type="text"
             placeholder="write a comment.... "
             name="comment"

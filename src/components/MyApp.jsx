@@ -10,6 +10,8 @@ import MyNavbar from "./Header/MyNavbar";
 import ViewSingleProfile from "./SearchProfile/ViewSingleProfile";
 import MyFollowing from "./myProfile/MyFollowing";
 import MyProfile from "./myProfile/MyProfile";
+import ComTest from "./Comtest/ComTest";
+import ComSingleTest from "./Comtest/ComSingleTest";
 
 const MyApp = () => {
   const route = createBrowserRouter([
@@ -23,7 +25,7 @@ const MyApp = () => {
         </>
       ),
     },
-     
+
     {
       path: "/searchProfile",
       element: (
@@ -38,7 +40,7 @@ const MyApp = () => {
       path: "/viewSingleProfile/:id",
       element: (
         <>
-           <MyNavbar />
+          <MyNavbar />
           <ViewSingleProfile />
           <Footer />
         </>
@@ -48,8 +50,8 @@ const MyApp = () => {
       path: "/myProfile",
       element: (
         <>
-           <MyNavbar />
-           <MyProfile/>
+          <MyNavbar />
+          <MyProfile />
           <Footer />
         </>
       ),
@@ -75,15 +77,32 @@ const MyApp = () => {
       ),
     },
 
-
-
-    
     {
       path: "/myFollowing",
       element: (
         <>
-           <MyNavbar />
-          <MyFollowing/>
+          <MyNavbar />
+          <MyFollowing />
+          <Footer />
+        </>
+      ),
+    },
+    {
+      path: "/comTest",
+      element: (
+        <>
+          <MyNavbar />
+          <ComTest />
+          <Footer />
+        </>
+      ),
+    },
+    {
+      path: "/comTest/:id",
+      element: (
+        <>
+          <MyNavbar />
+          <ComSingleTest />
           <Footer />
         </>
       ),

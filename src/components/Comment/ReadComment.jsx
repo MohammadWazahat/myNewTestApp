@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { useGetCommentsQuery } from "../../redux/features/apiSlices/myCommentSlice";
 import ReadSingleComment from "./ReadSingleComment";
 const ReadPost = () => {

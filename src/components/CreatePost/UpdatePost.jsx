@@ -12,7 +12,6 @@ const UpdatePost = () => {
   // console.log(id);
 
   const [user, setUser] = useState({
-    postImage: "",
     caption: "",
     tagPeople: "",
     location: "",

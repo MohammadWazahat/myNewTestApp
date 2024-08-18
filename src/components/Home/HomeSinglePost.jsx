@@ -18,14 +18,37 @@ import { myFollowingSliceOne } from "../../redux/features/myFollowingSlice/myFol
 
 
 const HomeSinglePost = (x) => {
- 
+//  console.log(x)
   const dispatch = useDispatch();
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const [addCom , setAddCom ] = useState();
+  const handleCom = (x)=>{
+    console.log(x);
+    setAddCom(x);
+    console.log(addCom);
+  }
+  const [comment, setComment] = useState([]);
 
+  const inputChangeHandler = (e) => {
+    // console.log(e.target.value)
+    setComment(e.target.value);
+    // console.log(comment);
+  };
+ 
+
+  const submitForm = (e) => {
+    e.preventDefault();
+    // const myComment = {
+    //   myComment : comment ,
+    // }
+    // addComment(myComment);
+    // location.reload();
+    console.log(comment)
+  };
   // const addFollowing =(y)=>{
   //   console.log(y)
   // }
@@ -108,6 +131,29 @@ const HomeSinglePost = (x) => {
       <section className="mt-4">
         <div className=" ">comment column</div>
         <div className=" ">hashtags </div>
+      </section>
+      <section>
+        <button
+          onClick={() => handleCom(x)} >
+          com
+        </button>
+      </section>
+      <section>
+      <div>
+        <form onSubmit={submitForm}>
+          {/* <label htmlFor="comment">Comment</label> */}
+          <br />
+          <input
+          className="bdr w-full mx-2 rounded p-2 "
+            type="text"
+            placeholder="write a comment.... "
+            name="comment"
+              onChange={inputChangeHandler}
+          />
+          <br />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
       </section>
 
       <div>
