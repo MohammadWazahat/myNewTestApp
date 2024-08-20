@@ -55,11 +55,6 @@ const Navbar = () => {
                       />
                     </NavLink>
                   </li>
-                  <li className="">
-                    <NavLink to="/comTest" className="">
-                      C
-                    </NavLink>
-                  </li>
                 </ul>
               </div>
             </div>

@@ -1,17 +1,15 @@
 import React from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import TestRedux from "./TestRedux/TestRedux";
 import AddPostForm from "./CreatePost/AddPostForm";
 import UpdatePost from "./CreatePost/UpdatePost";
-import Home from "./Home/Home";
 import SearchProfile from "./SearchProfile/SearchProfile";
 import Footer from "./Footer/Footer";
 import MyNavbar from "./Header/MyNavbar";
 import ViewSingleProfile from "./SearchProfile/ViewSingleProfile";
 import MyFollowing from "./myProfile/MyFollowing";
 import MyProfile from "./myProfile/MyProfile";
-import ComTest from "./Comtest/ComTest";
-import ComSingleTest from "./Comtest/ComSingleTest";
+import ComTest from "./Home/ComTest";
+import ComSingleTest from "./Home/ComSingleTest";
 
 const MyApp = () => {
   const route = createBrowserRouter([
@@ -20,7 +18,17 @@ const MyApp = () => {
       element: (
         <>
           <MyNavbar />
-          <Home />
+          <ComTest />
+          <Footer />
+        </>
+      ),
+    },
+    {
+      path: "/comTest/:id",
+      element: (
+        <>
+          <MyNavbar />
+          <ComSingleTest />
           <Footer />
         </>
       ),
@@ -86,31 +94,6 @@ const MyApp = () => {
           <Footer />
         </>
       ),
-    },
-    {
-      path: "/comTest",
-      element: (
-        <>
-          <MyNavbar />
-          <ComTest />
-          <Footer />
-        </>
-      ),
-    },
-    {
-      path: "/comTest/:id",
-      element: (
-        <>
-          <MyNavbar />
-          <ComSingleTest />
-          <Footer />
-        </>
-      ),
-    },
-
-    {
-      path: "/testRedux",
-      element: <TestRedux />,
     },
   ]);
 

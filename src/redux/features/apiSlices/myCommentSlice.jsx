@@ -1,15 +1,15 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const apiComment = createApi({
-  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:3007" }),
+  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:3008" }),
   //   tagTypes: ["Tasks"],
   endpoints: (builder) => ({
-    getComments: builder.query({
+    getComment: builder.query({
       query: () => "/comTest",
-      transformResponse: (tasks) => tasks.reverse(),
+      // transformResponse: (tasks) => tasks.reverse(),
       //   providesTags: ["Tasks"],
     }),
-    
+
     getSingleComment: builder.query({
       query: (id) => `/myComments/${id}`,
       //   transformResponse: (tasks) => tasks.reverse(),
@@ -28,11 +28,14 @@ export const apiComment = createApi({
     }),
 
     updateComment: builder.mutation({
-      query: (x) => ({
-        url: `/comTest/${x.user_id}`,
-        method: "PATCH",
-        body: x.updatedPost,
-      }),
+      query: (x) => (
+        console.log(x),
+        {
+          url: `/comTest/${x.id}`,
+          method: "PUT",
+          body: x.dat,
+        }
+      ),
     }),
 
     // deleteComment: builder.mutation({
@@ -45,7 +48,7 @@ export const apiComment = createApi({
 });
 
 export const {
-  useGetCommentsQuery,
+  useGetCommentQuery,
   useGetSingleCommentQuery,
   useAddCommentMutation,
   useUpdateCommentMutation,
