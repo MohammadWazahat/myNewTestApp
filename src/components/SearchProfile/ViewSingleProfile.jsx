@@ -11,7 +11,8 @@ const ViewSingleProfile = () => {
   const [addFollowing] = useAddFollowingMutation();
   console.log(addFollowing);
   return (
-    <div>
+    <div className="fc">
+      <div className="w-full md:w-1/2  lg:w-2/5">
       <section className="mt-8">
         <div className="flex items-center justify-center p-4">
           <img
@@ -81,6 +82,7 @@ const ViewSingleProfile = () => {
           })}
         </div>
       </section>
+    </div>
     </div>
   );
 };

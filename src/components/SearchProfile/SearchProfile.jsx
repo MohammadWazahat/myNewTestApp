@@ -10,8 +10,9 @@ const SearchProfile = () => {
   // console.log(data)
 
   return (
-    <div>
-      <section className="mt-4">
+    <div className="fc">
+    <div className="md:w-1/2  lg:w-2/5">
+    <section className="mt-4">
         <div>
           <SearchBar />
         </div>
@@ -23,6 +24,7 @@ const SearchProfile = () => {
           })}
         </div>
       </section>
+    </div>
     </div>
   );
 };

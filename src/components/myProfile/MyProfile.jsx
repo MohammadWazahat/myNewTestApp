@@ -9,7 +9,8 @@ import ReadPost from "../CreatePost/ReadPost";
 
 const MyProfile = () => {
   return (
-    <div>
+      <div className="fc">
+      <div className="w-full md:w-1/2  lg:w-2/5">
       <section className="mt-2">
         <div className="flex justify-between items-center mx-4 my-2">
           <div className="flex justify-center items-center gap-2">
@@ -94,6 +95,7 @@ const MyProfile = () => {
           <ReadPost />
         </div>
       </section>
+    </div>
     </div>
   );
 };

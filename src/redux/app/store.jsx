@@ -9,14 +9,14 @@ export const store = configureStore({
   reducer: {
     storeSliceThree: otherUserProfileSliceOne,
     storeSliceFour: myFollowingSlice,
-    [apiComment.reducerPath]: apiComment.reducer,
-    // [apiCreatePost.reducerPath]: apiCreatePost.reducer,
+    // [apiComment.reducerPath]: apiComment.reducer,
+    [apiCreatePost.reducerPath]: apiCreatePost.reducer,
     // [apiAddFollowings.reducerPath]: apiAddFollowings.reducer,
   },
   middleware: (getDefaultMiddleware) => [
     ...getDefaultMiddleware(),
-    apiComment.middleware,
-    // apiCreatePost.middleware,
+    // apiComment.middleware,
+    apiCreatePost.middleware,
     // apiAddFollowings.middleware,
   ],
   // middleware: (getDefaultMiddleware) => [

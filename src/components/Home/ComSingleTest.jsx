@@ -47,8 +47,9 @@ const ComSingleTest = () => {
 
   // console.log(myDatas.comment)
   return (
-    <div>
-      <section className="mt-8 ml-6">
+    <div className="fc">
+     <div className="md:w-1/2  lg:w-2/5">
+     <section className="mt-8 ml-6">
         <div className="text-xl ">Comment</div>
       </section>
       <section className="mt-4 mx-4">
@@ -92,19 +93,7 @@ const ComSingleTest = () => {
           })}
         </div>
       </section>
-      {/* <section>
-        <div className="bdr p-2">
-         <form action="" className="fc items-center"><div>
-          
-         <input type="text" className="bdr w-full h-10 " />
-         </div>
-         <div className="fc mt-6 items-center">
-         <button className="fc bdr p-2">hello</button>
-         </div>
-         </form>
-
-        </div>
-      </section> */}
+     </div>
     </div>
   );
 };

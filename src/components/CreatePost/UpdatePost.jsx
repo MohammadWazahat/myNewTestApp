@@ -57,7 +57,8 @@ const UpdatePost = () => {
   };
 
   return (
-    <div>
+    <div className="fc">
+      <div className="w-full md:w-1/2  lg:w-2/5">
       <section>
         <div className="text-2xl fc items-center text-orange-500 my-8">
           Update Your Post
@@ -120,6 +121,7 @@ const UpdatePost = () => {
           </div>
         </div>
       </section>
+    </div>
     </div>
   );
 };

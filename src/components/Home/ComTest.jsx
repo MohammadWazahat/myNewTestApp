@@ -28,7 +28,7 @@ const ComTest = () => {
     },
   ]);
   console.log(pic);
-  
+
   const { data, isError, isLoading } = useGetCommentQuery();
   // console.log(data)
   if (isLoading == true) {
@@ -38,52 +38,54 @@ const ComTest = () => {
     return <div>error...........</div>;
   }
 
-
-
   return (
-    <div>
-      <section className="mt-4">
-        <div className=" fb mx-4">
-          <div className=" fc text-2xl">Zara Lorenson</div>
-          <div className=" fc gap-6">
-            <div>
-              <FaRegHeart className="h-8 w-8" />
-            </div>
-            <div>
-              <RiMessengerLine className="h-8 w-8" />
+    <div className="fc">
+      <div className="md:w-1/2  lg:w-2/5">
+        <section className="mt-4">
+          <div className=" fb mx-4">
+            <div className=" fc text-2xl">Zara Lorenson</div>
+            <div className=" fc gap-6">
+              <div>
+                <FaRegHeart className="h-8 w-8" />
+              </div>
+              <div>
+                <RiMessengerLine className="h-8 w-8" />
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-      <section className="mt-8">
-        <div className="fc gap-3 ">
-          {pic.map((item, index) => {
-            return (
-              <div>
+        </section>
+        <section className="mt-8">
+          <div className="flex ml-2 gap-3 ">
+            {pic.map((item, index) => {
+              return (
                 <div>
-                  <img
-                    className="h-24 w-24 rounded-full bdr"
-                    src={item.image}
-                    alt=""
-                  />
+                  <div>
+                    <img
+                      className="h-24 w-24 rounded-full bdr"
+                      src={item.image}
+                      alt=""
+                    />
+                  </div>
+                  <div className="fc mt-2">{item.name}</div>
                 </div>
-                <div className="fc mt-2">{item.name}</div>
-              </div>
-            );
-          })}
-        </div>
-      </section>
-      <section className="mt-12">
-        <div className="grid grid-cols-1 gap-12">
-          {data.map((item, index) => {
-            return (
-              <div key={index}>
-                <ViewSingleTest {...item} />
-              </div>
-            );
-          })}
-        </div>
-      </section>
+              );
+            })}
+          </div>
+        </section>
+        <section className="mt-12">
+          <div className="fc">
+            <div className="grid grid-cols-1 sm:fc  gap-16">
+              {data.map((item, index) => {
+                return (
+                  <div key={index}>
+                    <ViewSingleTest {...item} />
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
   );
 };

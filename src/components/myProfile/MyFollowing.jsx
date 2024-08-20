@@ -26,8 +26,8 @@ const MyFollowing = () => {
   };
 
   return (
-    <div>
-      <div>
+    <div className="fc">
+      <div className="w-full md:w-1/2  lg:w-2/5">
         <section className="mt-8">
           <div>
             {isLoading ? (

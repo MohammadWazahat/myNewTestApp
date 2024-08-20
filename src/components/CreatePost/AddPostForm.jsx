@@ -33,7 +33,8 @@ const AddPostForm = () => {
     // setValues("");
   };
   return (
-    <div>
+    <div className="fc">
+      <div className="w-full md:w-1/2  lg:w-2/5">
       <section>
         <div className="text-3xl fc items-center text-orange-500 my-8">
           Add Your Post
@@ -93,6 +94,7 @@ const AddPostForm = () => {
           </Form>
         </div>
       </section>
+    </div>
     </div>
   );
 };
